@@ -61,6 +61,7 @@ const char* voldown[]  = {"amixer","set","PCM","5\%-",NULL};
 const char* volup[]    = {"amixer","set","PCM","5\%+",NULL};
 const char* firecmd[]  = {"qupzilla",NULL};
 const char* leafpad[]  = {"leafpad",NULL};
+const char* catkill[]  = {"pkill","X",NULL};
 
 // for reboot and shutdown
 const char* rebootcmd[]     = {"sudo","reboot",NULL};
@@ -78,14 +79,14 @@ static struct key keys[] = {
     {  MOD4,             XK_l,                       decrease,       {NULL}},
     {  MOD4|ShiftMask,   XK_c,                       kill_client,    {NULL}},
     {  MOD4,             XK_j,                       next_win,       {NULL}},
-    {  MOD4,             XK_Tab,                       next_win,       {NULL}},
+    {  MOD4,             XK_Tab,                     next_win,       {NULL}},
     {  MOD4,             XK_k,                       prev_win,       {NULL}},
     {  MOD4,             XK_c,                       spawn,          {.com = lockcmd}},
-    {  MOD4,             XK_F3,                      spawn,          {.com = next}},
-    {  MOD4,             XK_F2,                      spawn,          {.com = prev}},
-    {  MOD4,             XK_F1,                      spawn,          {.com = toggle}},
-    {  0,               XF86XK_AudioLowerVolume,    spawn,          {.com = voldown}},
-    {  0,               XF86XK_AudioRaiseVolume,    spawn,          {.com = volup}},
+    {  MOD4,             XK_Right,                   spawn,          {.com = next}},
+    {  MOD4,             XK_Left,                    spawn,          {.com = prev}},
+    {  MOD4,             XK_Down,                    spawn,          {.com = toggle}},
+    {  0,                XF86XK_AudioLowerVolume,    spawn,          {.com = voldown}},
+    {  0,                XF86XK_AudioRaiseVolume,    spawn,          {.com = volup}},
     {  MOD4,             XK_p,                       spawn,          {.com = dmenucmd}},
     {  MOD4,             XK_o,                       spawn,          {.com = firecmd}},
     {  MOD4|ShiftMask,   XK_Return,                  spawn,          {.com = urxvtcmd}},
@@ -102,6 +103,7 @@ static struct key keys[] = {
 // Window key + shortcut
 // Control + alt + shortcut
     {  MOD4|ControlMask, XK_q,                       quit,           {NULL}},
+    {  MOD4|ShiftMask,   XK_q,                       spawn,          {.com = catkill}},
 //    {  MOD1|ControlMask, XK_r,                       spawn,          {.com = rebootcmd}},
 //    {  MOD1|ControlMask, XK_s,                       spawn,          {.com = shutdowncmd}},
        DESKTOPCHANGE(   XK_1,                                       0)
