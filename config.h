@@ -91,17 +91,14 @@ static struct key keys[] = {
     {  MOD4,             XK_o,                       spawn,          {.com = firecmd}},
     {  MOD4|ShiftMask,   XK_Return,                  spawn,          {.com = urxvtcmd}},
     {  MOD4,             XK_z,                       spawn,          {.com = leafpad}},
-//    {  MOD4,             XK_Right,                   next_desktop,   {NULL}},
-//    {  MOD4,             XK_Left,                    prev_desktop,   {NULL}},
-// alt + shift + shortcut
+// Windows Key + shift + shortcut
     {  MOD4|ShiftMask,   XK_j,                       move_up,        {NULL}},
     {  MOD4|ShiftMask,   XK_k,                       move_down,      {NULL}},
     {  MOD4|ShiftMask,   XK_Return,                  swap_master,    {NULL}},
     {  MOD4|ShiftMask,   XK_m,                       toggle_fullscreen,{NULL}},
     {  MOD4|ShiftMask,   XK_v,                       switch_vertical,{NULL}},
     {  MOD4|ShiftMask,   XK_h,                       switch_horizontal,{NULL}},
-// Window key + shortcut
-// Control + alt + shortcut
+// Windows Key + Control + shortcut
     {  MOD4|ControlMask, XK_q,                       quit,           {NULL}},
     {  MOD4|ShiftMask,   XK_q,                       spawn,          {.com = catkill}},
 //    {  MOD1|ControlMask, XK_r,                       spawn,          {.com = rebootcmd}},
