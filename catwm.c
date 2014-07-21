@@ -376,7 +376,7 @@ void change_desktop(const Arg arg) {
 void next_desktop() {
     int tmp = current_desktop;
     if(tmp == 9)
-        tmp = 9;
+        tmp = 0;
     else
         tmp++;
 
@@ -387,7 +387,7 @@ void next_desktop() {
 void prev_desktop() {
     int tmp = current_desktop;
     if(tmp == 9)
-        tmp = 9;
+        tmp = 0;
     else
         tmp--;
 
