@@ -36,11 +36,9 @@ It allow the "normal" modes of tiling window managers:
     |        |___|
     --------------
 
-Tile down
+Horizontal stack
 
 and fullscreen mode
-
-There is no horizontal stack because I never use it. But if someone is interested in, it's very easy to add.
 
 Installation
 ------------
