@@ -98,9 +98,7 @@ static void kill_client();
 static void maprequest(XEvent *e);
 static void move_down();
 static void move_up();
-static void next_desktop();
 static void next_win();
-static void prev_desktop();
 static void prev_win();
 static void quit();
 static void remove_window(Window w);
@@ -371,28 +369,6 @@ void change_desktop(const Arg arg) {
     tile();
     update_current();
 
-}
-
-void next_desktop() {
-    int tmp = current_desktop;
-    if(tmp == 9)
-        tmp = 0;
-    else
-        tmp++;
-
-    Arg a = {.i = tmp};
-    change_desktop(a);
-}
-
-void prev_desktop() {
-    int tmp = current_desktop;
-    if(tmp == 9)
-        tmp = 0;
-    else
-        tmp--;
-
-    Arg a = {.i = tmp};
-    change_desktop(a);
 }
 
 void client_to_desktop(const Arg arg) {
