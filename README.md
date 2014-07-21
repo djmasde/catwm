@@ -16,7 +16,8 @@ I will try to stay under 1000 SLOC.
 
 Status
 ------
- * 21.07.14 -> v0.4  Numlock not affects keyboard shotcurts, Multiple desktops works now ok, Added space to use a toolbar
+ * 21.07.14 -> v0.4  Numlock not affects keyboard shotcurts, Multiple desktops works now ok,
+   Added space to use a toolbar
  * 05.07.19 -> v0.3. Multiple desktops and correct some bugs
  * 30.06.10 -> v0.2. Back again \o/
  * 15.03.10 -> v0.2. The wm is functional -> I only use this wm!
@@ -45,9 +46,13 @@ Installation
 ------------
 
 Need Xlib, then:
+
     $ nano config.h
+    
     $ make
+    
     # make install
+
     $ make clean
 
 Bugs
