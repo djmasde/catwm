@@ -21,7 +21,7 @@ Status
 
    -Multiple desktops works now ok,
 
-   -Added space to use a toolbar, 
+   -Added space to use a toolbar, ex: dzen2 
 
    -unmapnotify function, for, rares windows, ex: thunderbird, firefox...
 
