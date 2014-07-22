@@ -16,7 +16,15 @@ I will try to stay under 1000 SLOC.
 
 Status
 ------
- * 21.07.14 -> v0.4  
+ * 22.07.14 -> v0.4
+
+   -About: catwm -v,
+
+   -Removed a obsolete header,
+
+   -changed volume keybindings.
+
+ * 21.07.14  
    -Numlock not affects keyboard shotcurts. 
 
    -Multiple desktops works now ok,
@@ -26,14 +34,6 @@ Status
    -unmapnotify function, for, rares windows, ex: thunderbird, firefox...
 
     Before this, catwm crashes, with about dialogs or new window, from these windows..
-
- * 22.07.14
-
-   -About: catwm -v,
-
-   -Removed a obsolete header,
-
-   -changed volume keybindings.
 
  * 05.07.19 -> v0.3. Multiple desktops and correct some bugs
  * 30.06.10 -> v0.2. Back again \o/
