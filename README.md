@@ -29,9 +29,11 @@ Status
 
  * 22.07.14
 
-   -About: catwm -v ...
-   -Removed a obsolete header...
-   -changed volume keybindings....
+   -About: catwm -v,
+
+   -Removed a obsolete header,
+
+   -changed volume keybindings.
 
  * 05.07.19 -> v0.3. Multiple desktops and correct some bugs
  * 30.06.10 -> v0.2. Back again \o/
