@@ -28,7 +28,9 @@
  *  Bug with desktop numbers:
  *  -before, only show 3 desktops
  *  -after, show to 9 desktops, configured with config.h
+ *  -removed the next_window, and prev_window functions
  *  Now, numlock on, not affects the keyboard shortcuts
+ *  Unmapnotify function for rare windows, Ex: thunderbird, firefox, etc...
  */
 
 #ifndef CONFIG_H
