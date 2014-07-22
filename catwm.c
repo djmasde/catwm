@@ -737,6 +737,11 @@ void start() {
 
 
 int main(int argc, char **argv) {
+    //exported from dwm.c
+    if(argc == 2 && !strcmp("-v", argv[1]))
+	die("© 2010 pyknite, © 2014 Dj_Dexter, see LICENSE for details\n");
+    else if(argc != 1)
+	die("usage: catwm [-v]\n");
     // Open display   
     if(!(dis = XOpenDisplay(NULL)))
         die("Cannot open display!");
