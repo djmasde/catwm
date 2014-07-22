@@ -197,7 +197,7 @@ void unmapnotify(XEvent *e) { // for thunderbird's write window and maybe others
             if(ev->window == c->win) {
                 remove_window(ev->window);
                update_current(); 
-               //wtf! without this, the window in tiled mode, not get the all size
+               //wtf! without this, in tiled mode, not get all size of the window
                increase();
                return;
             }
