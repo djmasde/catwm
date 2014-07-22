@@ -18,9 +18,13 @@ Status
 ------
  * 21.07.14 -> v0.4  
    -Numlock not affects keyboard shotcurts. 
+
    -Multiple desktops works now ok,
+
    -Added space to use a toolbar, 
+
    -unmapnotify function, for, rares windows, ex: thunderbird, firefox...
+
     Before this, catwm crashes, with about dialogs or new window, from these windows..
  * 05.07.19 -> v0.3. Multiple desktops and correct some bugs
  * 30.06.10 -> v0.2. Back again \o/
