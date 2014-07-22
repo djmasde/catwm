@@ -44,7 +44,7 @@
 #include <signal.h>
 #include <sys/wait.h>
 #include <string.h>
-// exported from dmidwm.c and dwm.c
+// exported from dminidwm.c and dwm.c
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 #define TABLENGTH(X)    (sizeof(X)/sizeof(*X))
 // for ignoring the numlock mask
@@ -90,6 +90,7 @@ static void configurerequest(XEvent *e);
 static void decrease();
 static void destroynotify(XEvent *e);
 static void die(const char* e);
+static void unmapnotify(XEvent *e);    // Thunderbird's write window just unmaps...
 static unsigned long getcolor(const char* color);
 static void grabkeys();
 static void increase();
@@ -140,6 +141,7 @@ static int holder;    // for coming out of fullscreen mode back to what mode it 
 static void (*events[LASTEvent])(XEvent *e) = {
     [KeyPress] = keypress,
     [MapRequest] = maprequest,
+    [UnmapNotify] = unmapnotify,
     [DestroyNotify] = destroynotify,
     [ConfigureNotify] = configurenotify,
     [ConfigureRequest] = configurerequest
@@ -182,6 +184,22 @@ void add_window(Window w) {
 
     current = c;
     save_desktop(current_desktop);
+}
+
+void unmapnotify(XEvent *e) { // for thunderbird's write window and maybe others
+    XUnmapEvent *ev = &e->xunmap;
+    client *c;
+
+    if(ev->send_event == 1) {
+        for(c=head;c;c=c->next)
+            if(ev->window == c->win) {
+                remove_window(ev->window);
+               update_current(); 
+               //wtf! without this, the window in tiled mode, not get the all size
+               increase();
+               return;
+            }
+    }
 }
 
 void swap_master() {
