@@ -22,6 +22,8 @@ Status
 
    -Desktops are now 10 aka 10 tags or workspaces...
 
+   -Added a quick, and dirty hack in unmapnotify, for molest resize if have, more windows with dialogs...
+
  * 22.07.14
 
    -About: catwm -v,
