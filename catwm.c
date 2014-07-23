@@ -86,7 +86,6 @@ struct desktop{
 // Functions
 static void add_window(Window w);
 static void change_desktop(const Arg arg);
-static void client_to_desktop(const Arg arg);
 static void configurenotify(XEvent *e);
 static void configurerequest(XEvent *e);
 static void decrease();
@@ -150,7 +149,7 @@ static void (*events[LASTEvent])(XEvent *e) = {
 };
 
 // Desktop array
-static desktop desktops[9];
+static desktop desktops[10];
 
 /* ***************************** Window Management ******************************* */
 void add_window(Window w) {
@@ -389,28 +388,6 @@ void change_desktop(const Arg arg) {
     tile();
     update_current();
 
-}
-
-void client_to_desktop(const Arg arg) {
-    client *tmp = current;
-    int tmp2 = current_desktop;
-    
-    if(arg.i == current_desktop || current == NULL)
-        return;
-
-    // Add client to desktop
-    select_desktop(arg.i);
-    add_window(tmp->win);
-    save_desktop(arg.i);
-
-    // Remove client from current desktop
-    select_desktop(tmp2);
-    remove_window(current->win);
-    XUnmapWindow(dis,tmp->win);
-    current = current->next;
-
-    tile();
-    update_current();
 }
 
 void save_desktop(int i) {
