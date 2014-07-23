@@ -16,7 +16,13 @@ I will try to stay under 1000 SLOC.
 
 Status
 ------
- * 22.07.14 -> v0.4
+ * 23.07.14 -> v0.4
+
+   -Removed function client_to_desktop, more buggy o_O
+
+   -Desktops are now 10 aka 10 tags or workspaces...
+
+ * 22.07.14
 
    -About: catwm -v,
 
