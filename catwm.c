@@ -198,6 +198,8 @@ void unmapnotify(XEvent *e) { // for thunderbird's write window and maybe others
                update_current(); 
                //wtf! without this, in tiled mode, not get all size of the window
                increase();
+               //Kick and dirty hack, for molest resize, if have more dialogs...
+               decrease();
                return;
             }
     }
