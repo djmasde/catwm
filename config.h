@@ -72,7 +72,6 @@ const char* shutdowncmd[]   = {"sudo","shutdown","-h","now",NULL};
 // Avoid multiple paste
 #define DESKTOPCHANGE(K,N) \
     {  MOD4,             K,                          change_desktop, {.i = N}}, \
-    {  MOD4|ShiftMask,   K,                          client_to_desktop, {.i = N}},
 
 // Shortcuts
 static struct key keys[] = {
@@ -111,10 +110,10 @@ static struct key keys[] = {
        DESKTOPCHANGE(   XK_4,                                       3)
        DESKTOPCHANGE(   XK_5,                                       4)
        DESKTOPCHANGE(   XK_6,                                       5)
-//       DESKTOPCHANGE(   XK_7,                                       6)
-//       DESKTOPCHANGE(   XK_8,                                       7)
-//       DESKTOPCHANGE(   XK_9,                                       8)
-//       DESKTOPCHANGE(   XK_10,                                      9)
+       DESKTOPCHANGE(   XK_7,                                       6)
+       DESKTOPCHANGE(   XK_8,                                       7)
+       DESKTOPCHANGE(   XK_9,                                       8)
+       DESKTOPCHANGE(   XK_0,                                       9)
 };
 
 #endif
