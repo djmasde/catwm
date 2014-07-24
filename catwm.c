@@ -731,8 +731,10 @@ int main(int argc, char **argv) {
     else if(argc != 1)
 	die("usage: catwm [-v]\n");
     // Open display   
-    if(!(dis = XOpenDisplay(NULL)))
+    if(!(dis = XOpenDisplay(NULL))) {
         die("Cannot open display!");
+//        exit(1);
+    }
 
     // Setup env
     setup();
@@ -743,5 +745,6 @@ int main(int argc, char **argv) {
     // Close display
     XCloseDisplay(dis);
 
-    return 0;
+//    return 0;
+    exit(0);
 }
