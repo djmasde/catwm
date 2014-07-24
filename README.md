@@ -23,6 +23,8 @@ Status
    -Desktops are now 10 aka 10 tags or workspaces...
 
    -Added a quick, and dirty hack in unmapnotify, for molest resize if have, more windows with dialogs...
+  
+   -Added catkill function, to close X, in dwm's style
 
  * 22.07.14
 
