@@ -20,4 +20,4 @@ install: all
 clean:
 	rm -f catwm *.o
 uninstall:
-	rm /usr/bin/catwm
+	rm $(BINDIR)/catwm
