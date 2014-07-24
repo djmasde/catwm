@@ -63,7 +63,6 @@ const char* voldown[]  = {"amixer","set","PCM","5\%-",NULL};
 const char* volup[]    = {"amixer","set","PCM","5\%+",NULL};
 const char* firecmd[]  = {"qupzilla",NULL};
 const char* leafpad[]  = {"leafpad",NULL};
-const char* catkill[]  = {"pkill","X",NULL};
 
 // for reboot and shutdown
 const char* rebootcmd[]     = {"sudo","reboot",NULL};
@@ -100,8 +99,10 @@ static struct key keys[] = {
     {  MOD4|ShiftMask,   XK_v,                       switch_vertical,{NULL}},
     {  MOD4|ShiftMask,   XK_h,                       switch_horizontal,{NULL}},
 // Windows Key + Control + shortcut
+    // Kill all windows, wm is run, second launch close X
     {  MOD4|ControlMask, XK_q,                       quit,           {NULL}},
-    {  MOD4|ShiftMask,   XK_q,                       spawn,          {.com = catkill}},
+    // Quit normally 
+    {  MOD4|ShiftMask,   XK_q,                       catkill,        {NULL}},
 //    {  MOD1|ControlMask, XK_r,                       spawn,          {.com = rebootcmd}},
 //    {  MOD1|ControlMask, XK_s,                       spawn,          {.com = shutdowncmd}},
        DESKTOPCHANGE(   XK_1,                                       0)
