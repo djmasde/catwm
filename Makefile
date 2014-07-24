@@ -11,7 +11,7 @@ CC=cc
 all: $(EXEC)
 
 catwm: catwm.o
-	$(CC) $(LDFLAGS) -Os -Wall -o $@ $+ $(LDADD)
+	$(CC) $(LDFLAGS) -Os $(CFLAGS) -o $@ $+ $(LDADD)
 
 install: all
 	install -Dm 755 catwm $(DESTDIR)$(BINDIR)/catwm
