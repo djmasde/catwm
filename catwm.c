@@ -691,6 +691,7 @@ void setup() {
     // To catch maprequest and destroynotify (if other wm running)
     XSelectInput(dis,root,SubstructureNotifyMask|SubstructureRedirectMask);
     fprintf(stdout,"\n\n catwm-0.0.4: We're up and running!\n");
+    update_current();
 }
 
 void sigchld(int unused) {
@@ -743,7 +744,7 @@ int main(int argc, char **argv) {
     start();
 
     // Close display
-    XCloseDisplay(dis);
+//    XCloseDisplay(dis);
 
 //    return 0;
     exit(0);
