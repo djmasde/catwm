@@ -103,6 +103,7 @@ static void move_up();
 static void next_win();
 static void prev_win();
 static void quit();
+static void catkill(); //other method to quit
 static void remove_window(Window w);
 static void save_desktop(int i);
 static void select_desktop(int i);
@@ -581,7 +582,15 @@ void maprequest(XEvent *e) {
     update_current();
 }
 
+void catkill() {
+        //Close connection to X, dwm style :)
+        XCloseDisplay(dis);
+        fprintf(stdout, "catwm-0.0.4: You are killed me!\n");
+        die("forced shutdown");
+}
+
 void quit() {
+    //other method, for quit...
     Window root_return, parent;
     Window *children;
     int i;
