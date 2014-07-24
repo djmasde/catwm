@@ -6,7 +6,7 @@ EXEC=catwm
 PREFIX?= /usr
 BINDIR?= $(PREFIX)/bin
 
-CC=gcc
+CC=cc
 
 all: $(EXEC)
 
@@ -15,8 +15,8 @@ catwm: catwm.o
 
 install: all
 	install -Dm 755 catwm $(DESTDIR)$(BINDIR)/catwm
-	strip /usr/bin/catwm
-	chmod 755 /usr/bin/catwm
+	strip $(BINDIR)/catwm
+	chmod 755 $(BINDIR)/catwm
 clean:
 	rm -f catwm *.o
 uninstall:
