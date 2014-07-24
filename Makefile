@@ -16,6 +16,7 @@ catwm: catwm.o
 install: all
 	install -Dm 755 catwm $(DESTDIR)$(BINDIR)/catwm
 	strip /usr/bin/catwm
+	chmod 755 /usr/bin/catwm
 clean:
 	rm -f catwm *.o
 uninstall:
