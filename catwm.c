@@ -648,6 +648,8 @@ void send_kill_signal(Window w) {
 }
 
 void setup() {
+    unsigned int i;
+
     // Install a signal
     sigchld(0);
 
@@ -683,7 +685,7 @@ void setup() {
         master_size = sw*MASTER_SIZE;
 
     // Set up all desktop
-    int i;
+//    int i;
     for(i=0;i<TABLENGTH(desktops);++i) {
         desktops[i].master_size = master_size;
         desktops[i].mode = mode;
