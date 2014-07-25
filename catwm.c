@@ -118,6 +118,8 @@ static void switch_vertical();
 static void switch_horizontal();
 static void tile();
 static void update_current();
+static int xerror(Display *dis, XErrorEvent *ee), (*xerrorxlib)(Display *, XErrorEvent *); //for error handler
+static void logger(const char* e); //logger
 
 // Include configuration file (need struct key)
 #include "config.h"
@@ -727,6 +729,28 @@ void start() {
     }
 }
 
+//for logging events...
+void logger(const char* e) {
+    fprintf(stderr,"\n\033[0;34m:: catwm-0.0.4 : %s \033[0;m\n", e);
+}
+
+/* There's no way to check accesses to destroyed windows, thus those cases are ignored (especially on UnmapNotify's).  Other types of errors call Xlibs default error handler, which may call exit.  */
+int xerror(Display *dis, XErrorEvent *ee) {
+    if(ee->error_code == BadWindow || (ee->request_code == X_SetInputFocus && ee->error_code == BadMatch)
+	|| (ee->request_code == X_PolyText8 && ee->error_code == BadDrawable)
+	|| (ee->request_code == X_PolyFillRectangle && ee->error_code == BadDrawable)
+	|| (ee->request_code == X_PolySegment && ee->error_code == BadDrawable)
+	|| (ee->request_code == X_ConfigureWindow && ee->error_code == BadMatch)
+	|| (ee->request_code == X_GrabKey && ee->error_code == BadAccess)
+	|| (ee->request_code == X_CopyArea && ee->error_code == BadDrawable))
+        return 0;
+    if(ee->error_code == BadAccess) {
+        logger("\033[0;31mIs Another Window Manager Running? Exiting!");
+        exit(1);
+    } else logger("\033[0;31mBad Window Error!");
+    return xerrorxlib(dis, ee); /* may call exit */
+}
+
 int main(int argc, char **argv) {
     //exported from dwm.c
     if(argc == 2 && !strcmp("-v", argv[1]))
@@ -736,8 +760,9 @@ int main(int argc, char **argv) {
     // Open display   
     if(!(dis = XOpenDisplay(NULL))) {
         die("Cannot open display!");
-//        exit(1);
     }
+    // X error handler (if other wm is running in the same display)
+    XSetErrorHandler(xerror);
     
     // Setup env
     setup();
@@ -746,8 +771,7 @@ int main(int argc, char **argv) {
     start();
 
     // Close display
-//    XCloseDisplay(dis);
+    XCloseDisplay(dis);
 
-//    return 0;
-    exit(0);
+    return 0;
 }
