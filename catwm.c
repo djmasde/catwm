@@ -801,7 +801,7 @@ int main(int argc, char **argv) {
         die("Cannot open display!");
     }
     // X error handler (if other wm is running in the same display)
-    XSetErrorHandler(xerror);
+//    XSetErrorHandler(xerror);
     
     // Setup env
     setup();
