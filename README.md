@@ -131,7 +131,7 @@ License
 
 Licensed under MIT/X Consortium License, see [LICENSE][law] file for more copyright and license information.
 
-  [law]: https://raw.github.com/djmasde/catwm/master/LICENSE_DWM
+  [law]: https://raw.githubusercontent.com/djmasde/catwm/master/LICENCE_DWM
 
 Thanks
 ------
