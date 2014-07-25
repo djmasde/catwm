@@ -363,6 +363,7 @@ void update_current() {
         }
         else
             XSetWindowBorder(dis,c->win,win_unfocus);
+            XSync(dis, False);
 }
 
 /* **************************** Desktop Management ************************************* */
