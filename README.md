@@ -73,9 +73,23 @@ It allow the "normal" modes of tiling window managers:
     |        |___|
     --------------
 
-Horizontal stack
+Horizontal stack:
 
-and fullscreen mode
+    -------------
+    |           |
+    |  Master   |
+    |-----------|
+    | W |   |   |
+    -------------
+
+and fullscreen mode:
+
+    -------------
+    |           |
+    | no        |
+    | borders!  |
+    |           |
+    -------------
 
 Installation
 ------------
@@ -105,3 +119,10 @@ Todo
 If you have some particular request, just send me an e-mail, and I will see for it!
 
 Here a screenshot: http://a.pomf.se/qxwuno.png
+
+Thanks
+------
+
+ * [the suckless team](http://suckless.org/)
+ * [moetunes](https://github.com/moetunes)
+ * [pyknite](https://github.com/pyknite)
