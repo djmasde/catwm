@@ -16,7 +16,13 @@ I will try to stay under 1000 SLOC.
 
 Status
 ------
- * 24.07.14 -> v0.4
+ * 25.07.14 -> v0.4
+
+   -Minor changes in catwm.c
+
+   -Added a x error handler (if other wm is running in the same display)...
+
+ * 24.07.14 ->
 
    -Minor changes in catwm.c
   
