@@ -52,6 +52,8 @@
 // for ignoring the numlock mask
 #define CLEANMASK(mask) (mask & ~(numlockmask | LockMask))
 
+enum { WM_PROTOCOLS, WM_DELETE_WINDOW, WM_COUNT };
+
 typedef union {
     const char** com;
     const int i;
@@ -120,6 +122,8 @@ static void tile();
 static void update_current();
 static int xerror(Display *dis, XErrorEvent *ee), (*xerrorxlib)(Display *, XErrorEvent *); //for error handler
 static void logger(const char* e); //logger
+static void cleanup(void); //exported from monsterwm.c
+static void deletewindow(Window w); //exported from monsterwm.c
 
 // Include configuration file (need struct key)
 #include "config.h"
@@ -751,6 +755,41 @@ int xerror(Display *dis, XErrorEvent *ee) {
     return xerrorxlib(dis, ee); /* may call exit */
 }
 
+/**
+ * clients receiving a WM_DELETE_WINDOW message should behave as if
+ * the user selected "delete window" from a hypothetical menu and
+ * also perform any confirmation dialog with the user.
+ */
+void deletewindow(Window w) {
+     if(current != NULL) {
+        //send delete signal to window
+        XEvent ke;
+        ke.type = ClientMessage;
+        ke.xclient.window = current->win;
+        ke.xclient.message_type = XInternAtom(dis, "WM_PROTOCOLS", True);
+        ke.xclient.format = 32;
+        ke.xclient.data.l[0] = XInternAtom(dis, "WM_DELETE_WINDOW", True);
+        ke.xclient.data.l[1] = CurrentTime;
+        XSendEvent(dis, current->win, False, NoEventMask, &ke);
+        send_kill_signal(current->win);
+    }
+
+}
+
+/**
+ * remove all windows in all desktops by sending a delete window message
+ */
+void cleanup(void) {
+    Window root_return, parent_return, *children;
+    unsigned int nchildren;
+
+    XUngrabKey(dis, AnyKey, AnyModifier, root);
+    XQueryTree(dis, root, &root_return, &parent_return, &children, &nchildren);
+    for (unsigned int i = 0; i < nchildren; i++) deletewindow(children[i]);
+    if (children) XFree(children);
+    XSync(dis, False);
+}
+
 int main(int argc, char **argv) {
     //exported from dwm.c
     if(argc == 2 && !strcmp("-v", argv[1]))
@@ -769,7 +808,7 @@ int main(int argc, char **argv) {
 
     // Start wm
     start();
-
+    cleanup();
     // Close display
     XCloseDisplay(dis);
 
