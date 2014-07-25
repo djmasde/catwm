@@ -19,8 +19,6 @@ Status
  * 24.07.14 -> v0.4
 
    -Minor changes in catwm.c
-
-   -Added a X error handler...
   
  * 23.07.14
 
