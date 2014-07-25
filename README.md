@@ -96,6 +96,10 @@ Installation
 
 Need Xlib, then:
 
+    -In debian and derivatives: apt-get install build-essential libx11-dev x11-dev
+
+    -If use slackware, archlinux, headers is present now, in default installation...
+
     $ nano config.h
     
     $ make
