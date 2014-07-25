@@ -73,7 +73,7 @@ It allow the "normal" modes of tiling window managers:
     |        |___|
     --------------
 
-Horizontal stack:
+Horizontal tiling mode:
 
     -------------
     |           |
