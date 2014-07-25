@@ -96,7 +96,7 @@ Installation
 
 In debian and derivatives: 
 
-    # apt-get install build-essential libx11-dev
+    # apt-get install build-essential libx11-dev xlibs-dev
 
 If use slackware, archlinux, headers is present now, in default installation...
 
