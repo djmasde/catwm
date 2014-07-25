@@ -762,7 +762,7 @@ int main(int argc, char **argv) {
 //        exit(1);
     }
     // X error handler
-    XSetErrorHandler(xerror);
+//    XSetErrorHandler(xerror);
     
     // Setup env
     setup();
