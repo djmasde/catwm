@@ -1,4 +1,4 @@
-CFLAGS+= -Wall
+CFLAGS+= -Wall -std=c99
 LDADD+= -lX11 
 LDFLAGS=
 EXEC=catwm
