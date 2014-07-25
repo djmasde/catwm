@@ -53,7 +53,9 @@
 #define FOCUS           "#664422" // dkorange
 #define UNFOCUS         "#004050" // blueish
 
-const char* dmenucmd[] = {"gmrun",NULL};
+//if have gmrun...
+//const char* dmenucmd[] = {"gmrun",NULL};
+const char* dmenucmd[] = {"dmenu_run",NULL};
 const char* urxvtcmd[] = {"urxvt",NULL};
 const char* lockcmd[]  = {"xlock",NULL};
 const char* next[]     = {"ncmpcpp","next",NULL};
