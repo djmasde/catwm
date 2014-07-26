@@ -16,7 +16,25 @@ I will try to stay under 1000 SLOC.
 
 Status
 ------
- * 25.07.14 -> v0.4
+* 26.07.14 -> v0.4
+
+   -Minor changes in catwm.c
+
+   -Added a x error handler (if other wm is running in the same display)...
+
+   -Updated Makefile, in dwm's style
+
+   -Added a config.mk to custom makefile flags, etc
+
+   -Added a manpage aka catwm.1
+
+   -Installation route is changed to /usr/local/...
+
+   -Destroyed quit and bool_quit functions, are little boggus
+
+   -"Adopted" cleanup() function, from monsterwm.c
+
+ * 25.07.14
 
    -Minor changes in catwm.c
 
