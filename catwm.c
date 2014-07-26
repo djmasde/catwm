@@ -124,6 +124,7 @@ static int xerror(Display *dis, XErrorEvent *ee), (*xerrorxlib)(Display *, XErro
 static void logger(const char* e); //logger
 static void cleanup(void); //exported from monsterwm.c
 static void deletewindow(Window w); //exported from monsterwm.c
+static Bool running = True;
 
 // Include configuration file (need struct key)
 #include "config.h"
@@ -725,12 +726,7 @@ void spawn(const Arg arg) {
 
 void start() {
     XEvent ev;
-
-    // Main loop, just dispatch events (thx to dwm ;)
-    while(!bool_quit && !XNextEvent(dis,&ev)) {
-        if(events[ev.type])
-            events[ev.type](&ev);
-    }
+    while(running && !XNextEvent(dis, &ev)) if (events[ev.type]) events[ev.type](&ev);
 }
 
 //for logging events...
