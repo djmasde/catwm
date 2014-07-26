@@ -1,6 +1,6 @@
 .TH catwm 1 catwm\-VERSION
 .SH NAME
-catwm \- cute and tile window manager
+catwm \- cute and little tile window manager
 .SH SYNOPSIS
 .B dwm
 .RB [ \-v ]
@@ -33,6 +33,8 @@ Please install rxvt-unicode to use urxvt, but the default launcher is easy to ed
 config.h for changes urxvt to uxterm...
 .P
 catwm draws a small border around windows to indicate the focus state.
+.P
+Multihead is supported, aka multimonitor.
 .SH OPTIONS
 .TP
 .B \-v
@@ -53,9 +55,6 @@ Start
 .TP
 .B Mod4\-p,
 Launches dmenu_run.
-.TP
-.B Mod4\-Tab
-Focus next window, if any.
 .TP
 .B Mod4\-ShiftMask\-intro
 Sets tiled master layout.
@@ -131,3 +130,10 @@ which requests to reconfigure its window size in an endless loop. However, its
 window is still respondable during this state, so you can simply ignore the flicker
 until a new GTK version appears, which will fix this bug, approximately
 GTK 2.10.12+ versions.
+.SH Notice
+The original catwm from pyknite is more buggy, numlock affects the window manager shortcuts.
+In qt/gtk dialogs, catwm crashed, if close firefox, thunderbird, qupzilla new window, or other dialogs, 
+the desktop management aka tags, are runs bad, and little buggy, etc.
+.P
+In this fork runs very stable. desktop tags aka workspaces, or tags, runs ok, catwm not crashed with,
+qt/gtk dialogs, if close new window of thunderbird, firefox, qupzilla, and etc.
