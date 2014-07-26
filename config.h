@@ -100,9 +100,7 @@ static struct key keys[] = {
     {  MOD4|ShiftMask,   XK_m,                       toggle_fullscreen,{NULL}},
     {  MOD4|ShiftMask,   XK_v,                       switch_vertical,{NULL}},
     {  MOD4|ShiftMask,   XK_h,                       switch_horizontal,{NULL}},
-// Windows Key + Control + shortcut
-    // Kill all windows, wm is run, second launch close X
-//    {  MOD4|ControlMask, XK_q,                       quit,           {NULL}},
+// Windows Key + shift + shortcut
     // Quit normally 
     {  MOD4|ShiftMask,   XK_q,                       catkill,        {NULL}},
 //    {  MOD1|ControlMask, XK_r,                       spawn,          {.com = rebootcmd}},
