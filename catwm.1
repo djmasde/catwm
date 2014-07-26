@@ -1,0 +1,145 @@
+.TH catwm 1 catwm\-VERSION
+.SH NAME
+catwm \- cute and tile window manager
+.SH SYNOPSIS
+.B dwm
+.RB [ \-v ]
+.SH DESCRIPTION
+catwm is a cute tiling window manager for X. It manages windows in tiled, monocle
+and horizontal stack. Either layout can be applied dynamically, optimising the
+environment for the application in use and the task performed.
+.P
+In tiled layouts windows are managed in a master and stacking area. The master
+area contains the window which currently needs most attention, whereas the
+stacking area contains all other windows. In monocle layout all windows are
+maximised to the screen size. In horizontal stack layout windows are equal in
+tiles, but horizontal. Dialog windows are always managed floating, regardless of the
+layout applied.
+.P
+These window manager are like, ratpoison, no mouse management, except, for dialogs
+of gtk, qt, mplayer, etc...
+.P
+Windows are grouped by tags. Each window can be tagged with one or multiple
+tags. Selecting certain tags displays all windows with these tags.
+.P
+Each screen contains a small status bar which displays all available tags, the
+layout, the title of the focused window, and the text read from the root window
+name property, if the screen is focused. The tags which are applied to one or more windows are
+indicated with an empty square in the top left corner.
+.P
+Note: Mod4 key is window key or aka super key, Shiftmask is a Shift key, and etc
+.P
+Please install rxvt-unicode to use urxvt, but the default launcher is easy to edited in
+config.h for changue urxvt to uxterm...
+.P
+catwm draws a small border around windows to indicate the focus state.
+.SH OPTIONS
+.TP
+.B \-v
+prints version information to standard output, then exits.
+.SH USAGE
+.SS Status bar
+.TP
+.B X root window name
+is read and displayed in the status text area. It can be set with the
+.BR dzen2 (1)
+command.
+.TP
+.SS Keyboard commands
+.TP
+.B Mod1\-Shift\-Return
+Start
+.BR urxvt (1).
+.TP
+.B Mod4\-,
+Focus previous screen, if any.
+.B Mod4\-p,
+Launches dmenu_run.
+.TP
+.B Mod4\-.
+Focus next screen, if any.
+.TP
+.B Mod4\-Tab
+Focus next window, if any.
+.TP
+.B Mod4\-ShiftMask\-,
+Send focused window to previous screen, if any.
+.TP
+.B Mod4\-ShiftMask\-.
+Send focused window to next screen, if any.
+.TP
+.TP
+.B Mod4\-ShiftMask\-intro
+Sets tiled master layout.
+.TP
+.B Mod4\-ShiftMask\-h
+Sets tiled layout.
+.TP
+.B Mod1\-ShiftMask\-v,
+Sets horizontal tile layout.
+.TP
+.B Mod4\-ShiftMask\-m
+Sets monocle layout.
+.TP
+.B Mod4\-j
+Focus next window.
+.TP
+.B Mod4\-k
+Focus previous window.
+.TP
+.B Mod4\-Tab
+Focus next window.
+.TP
+.B Mod4\-h
+Increase master area size.
+.TP
+.B Mod4\-l
+Decrease master area size.
+.TP
+.B Mod4\-Shift\-c
+Close focused window.
+.TP
+.B Mod4\-Tab
+Focus next focused window like, altab.
+.TP
+.B Mod4\-Shift\-[1..n]
+Apply nth tag to focused window.
+.TP
+.B Mod4\-Shift\-0
+Apply all tags to focused window.
+.TP
+.B Mod4\-[1..n]
+View all windows with nth tag.
+.TP
+.B Mod4\-0
+View all windows with any tag.
+.TP
+.B Mod4\-Shift\-q
+Quit catwm.
+.SH CUSTOMIZATION
+catwm is customized by creating a custom config.h and (re)compiling the source
+code. This keeps it fast, secure and simple.
+.SH SEE ALSO
+.BR dmenu (1)
+.SH BUGS
+Java applications which use the XToolkit/XAWT backend may draw grey windows
+only. The XToolkit/XAWT backend breaks ICCCM-compliance in recent JDK 1.5 and early
+JDK 1.6 versions, because it assumes a reparenting window manager. Possible workarounds
+are using JDK 1.4 (which doesn't contain the XToolkit/XAWT backend) or setting the
+environment variable
+.BR AWT_TOOLKIT=MToolkit
+(to use the older Motif backend instead) or running
+.B xprop -root -f _NET_WM_NAME 32a -set _NET_WM_NAME LG3D
+or
+.B wmname LG3D
+(to pretend that a non-reparenting window manager is running that the
+XToolkit/XAWT backend can recognize) or when using OpenJDK setting the environment variable
+.BR _JAVA_AWT_WM_NONREPARENTING=1 .
+.P
+GTK 2.10.9+ versions contain a broken
+.BR Save\-As
+file dialog implementation,
+which requests to reconfigure its window size in an endless loop. However, its
+window is still respondable during this state, so you can simply ignore the flicker
+until a new GTK version appears, which will fix this bug, approximately
+GTK 2.10.12+ versions.
