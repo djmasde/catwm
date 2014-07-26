@@ -1,23 +1,60 @@
-CFLAGS+= -Wall -std=c99
-LDADD+= -lX11 
-LDFLAGS=
-EXEC=catwm
+# catwm - cute and tile window manager
+# See LICENSE file for copyright and license details.
 
-PREFIX?= /usr
-BINDIR?= $(PREFIX)/bin
+include config.mk
 
-CC=cc
+SRC = catwm.c
+OBJ = ${SRC:.c=.o}
 
-all: $(EXEC)
+all: options catwm
 
-catwm: catwm.o
-	$(CC) $(LDFLAGS) -Os -O2 $(CFLAGS) -o $@ $+ $(LDADD)
+options:
+	@echo catwm build options:
+	@echo "CFLAGS   = ${CFLAGS}"
+	@echo "LDFLAGS  = ${LDFLAGS}"
+	@echo "CC       = ${CC}"
+
+.c.o:
+	@echo CC $<
+	@${CC} -c ${CFLAGS} $<
+
+${OBJ}: config.h config.mk
+
+config.h:
+	@echo creating $@ from config.def.h
+	@cp config.def.h $@
+
+dwm: ${OBJ}
+	@echo CC -o $@
+	@${CC} -o $@ ${OBJ} ${LDFLAGS}
+
+clean:
+	@echo cleaning
+	@rm -f catwm ${OBJ}
+
+dist: clean
+	@echo creating dist tarball
+	@mkdir -p catwm
+	@cp -R LICENSE Makefile README config.def.h config.mk \
+		catwm.1 ${SRC}
+	@tar -cf catwm-${VERSION}.tar
+	@gzip catwm-${VERSION}.tar
+	@rm -rf catwm-${VERSION}
 
 install: all
-	install -Dm 755 catwm $(DESTDIR)$(BINDIR)/catwm
-	strip $(BINDIR)/catwm
-	chmod 755 $(BINDIR)/catwm
-clean:
-	rm -f catwm *.o
+	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
+	@mkdir -p ${DESTDIR}${PREFIX}/bin
+	@cp -f catwm ${DESTDIR}${PREFIX}/bin
+	@chmod 755 ${DESTDIR}${PREFIX}/bin/catwm
+	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
+	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
+	@sed "s/VERSION/${VERSION}/g" < catwm.1 > ${DESTDIR}${MANPREFIX}/man1/catwm.1
+	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/catwm.1
+
 uninstall:
-	rm $(BINDIR)/catwm
+	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
+	@rm -f ${DESTDIR}${PREFIX}/bin/catwm
+	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
+	@rm -f ${DESTDIR}${MANPREFIX}/man1/catwm.1
+
+.PHONY: all options clean dist install uninstall
