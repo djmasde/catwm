@@ -16,7 +16,7 @@ I will try to stay under 1000 SLOC.
 
 Status
 ------
-* 26.07.14 -> v0.4
+ * 26.07.14 -> v0.4
 
    -Minor changes in catwm.c
 
