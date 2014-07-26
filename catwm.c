@@ -673,7 +673,7 @@ void setup() {
     mode = DEFAULT_MODE;
 
     // For exiting
-    bool_quit = 0;
+//    bool_quit = 0;
 
     // List of client
     head = NULL;
