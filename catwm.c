@@ -104,8 +104,7 @@ static void move_down();
 static void move_up();
 static void next_win();
 static void prev_win();
-static void quit();
-static void catkill(); //other method to quit
+static void catkill(); //kill the cat, xD
 static void remove_window(Window w);
 static void save_desktop(int i);
 static void select_desktop(int i);
@@ -132,7 +131,6 @@ static Bool running = True;
 // Variable
 static Display *dis;
 unsigned int numlockmask;		/* dynamic key lock mask */
-static int bool_quit;
 static int current_desktop;
 static int master_size;
 static int mode;
@@ -595,46 +593,6 @@ void catkill() {
         XCloseDisplay(dis);
         fprintf(stdout, "catwm-0.0.4: You are killed me!\n");
         die("forced shutdown");
-}
-
-void quit() {
-    //other method, for quit...
-    Window root_return, parent;
-    Window *children;
-    int i;
-    unsigned int nchildren; 
-    XEvent ev;
-
-    /*
-     * if a client refuses to terminate itself,
-     * we kill every window remaining the brutal way.
-     * Since we're stuck in the while(nchildren > 0) { ... } loop
-     * we can't exit through the main method.
-     * This all happens if MOD+q is pushed a second time.
-     */
-    if(bool_quit == 1) {
-        XUngrabKey(dis, AnyKey, AnyModifier, root);
-        XDestroySubwindows(dis, root);
-        fprintf(stdout, "catwm-0.0.4: Thanks for using!\n");
-        XCloseDisplay(dis);
-        die("forced shutdown");
-    }
-
-    bool_quit = 1;
-    XQueryTree(dis, root, &root_return, &parent, &children, &nchildren);
-    for(i = 0; i < nchildren; i++) {
-        send_kill_signal(children[i]);
-    }
-    //keep alive until all windows are killed
-    while(nchildren > 0) {
-        XQueryTree(dis, root, &root_return, &parent, &children, &nchildren);
-        XNextEvent(dis,&ev);
-        if(events[ev.type])
-            events[ev.type](&ev);
-    }
-
-    XUngrabKey(dis,AnyKey,AnyModifier,root);
-    fprintf(stdout,"catwm-0.0.4: You Quit : Thanks for using!\n");
 }
 
 void send_kill_signal(Window w) { 
