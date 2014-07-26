@@ -34,10 +34,10 @@ clean:
 
 dist: clean
 	@echo creating dist tarball
-	@mkdir -p catwm
-	@cp -R LICENSE Makefile README config.def.h config.mk \
-		catwm.1 ${SRC}
-	@tar -cf catwm-${VERSION}.tar
+	@mkdir -p catwm-${VERSION}
+	@cp -R LICENCE_DWM Makefile README.md config.def.h config.h config.mk \
+		catwm.1 ${SRC} catwm-${VERSION}
+	@tar -cf catwm-${VERSION}.tar catwm-${VERSION}
 	@gzip catwm-${VERSION}.tar
 	@rm -rf catwm-${VERSION}
 
