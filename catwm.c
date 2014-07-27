@@ -764,7 +764,7 @@ int main(int argc, char **argv) {
     start();
     cleanup();
     // Close display
-    XCloseDisplay(dis);
+//    XCloseDisplay(dis);
 
     return 0;
 }
