@@ -55,7 +55,7 @@
 
 //if have gmrun...
 //const char* dmenucmd[] = {"gmrun",NULL};
-const char* dmenucmd[] = {"dmenu_run",NULL};
+const char* dmenucmd[] = {"dmenu_run","-b",NULL};
 const char* urxvtcmd[] = {"urxvt",NULL};
 const char* lockcmd[]  = {"xlock",NULL};
 const char* next[]     = {"ncmpcpp","next",NULL};
@@ -65,6 +65,7 @@ const char* voldown[]  = {"amixer","set","PCM","5\%-",NULL};
 const char* volup[]    = {"amixer","set","PCM","5\%+",NULL};
 const char* firecmd[]  = {"qupzilla",NULL};
 const char* leafpad[]  = {"leafpad",NULL};
+const char* paharo[]   = {"psi",NULL};
 
 // for reboot and shutdown
 const char* rebootcmd[]     = {"sudo","reboot",NULL};
@@ -93,6 +94,7 @@ static struct key keys[] = {
     {  MOD4,             XK_o,                       spawn,          {.com = firecmd}},
     {  MOD4|ShiftMask,   XK_Return,                  spawn,          {.com = urxvtcmd}},
     {  MOD4,             XK_z,                       spawn,          {.com = leafpad}},
+    {  MOD4,             XK_x,                       spawn,          {.com = paharo}},
 // Windows Key + shift + shortcut
     {  MOD4|ShiftMask,   XK_j,                       move_up,        {NULL}},
     {  MOD4|ShiftMask,   XK_k,                       move_down,      {NULL}},
