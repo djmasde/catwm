@@ -147,9 +147,9 @@ Here a screenshot: http://a.pomf.se/qxwuno.png
 License
 -------
 
-Licensed under MIT/X Consortium License, see [LICENSE][law] file for more copyright and license information.
+Licensed under GNU GPL version 3, see [LICENSE][law] file for more copyright and license information.
 
-  [law]: https://raw.githubusercontent.com/djmasde/catwm/master/LICENCE_DWM
+  [law]: https://raw.githubusercontent.com/djmasde/catwm/master/LICENSE
 
 Thanks
 ------

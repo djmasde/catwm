@@ -7,6 +7,7 @@
  *  (          ))))))________________ Cute And Tiny Window Manager
  *  ______________________________________________________________________________
  *
+ *  Copyright (c) 2014, Dj_Dexter, Helmuth.Schmelzer@gmail.com
  *  Copyright (c) 2010, Rinaldini Julien, julien.rinaldini@heig-vd.ch
  *  Based in moetunes fork
  *  This program is free software: you can redistribute it and/or modify
@@ -200,7 +201,7 @@ void unmapnotify(XEvent *e) { // for thunderbird's write window and maybe others
     if(ev->send_event == 1) {
         for(c=head;c;c=c->next)
             if(ev->window == c->win) {
-                remove_window(ev->window);
+               remove_window(ev->window);
                update_current(); 
                //wtf! without this, in tiled mode, not get all size of the window
                increase();
@@ -759,7 +760,6 @@ int main(int argc, char **argv) {
     
     // Setup env
     setup();
-
     // Start wm
     start();
     cleanup();

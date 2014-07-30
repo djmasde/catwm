@@ -7,6 +7,7 @@
  *  (          ))))))________________ Cute And Tiny Window Manager
  *  ______________________________________________________________________________
  *
+ *  Copyright (c) 2014, Dj_Dexter, Helmuth.Schmelzer@gmail.com
  *  Copyright (c) 2010, Rinaldini Julien, julien.rinaldini@heig-vd.ch
  *  Based in moetunes fork
  *  This program is free software: you can redistribute it and/or modify
