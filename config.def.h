@@ -7,7 +7,7 @@
  *  (          ))))))________________ Cute And Tiny Window Manager
  *  ______________________________________________________________________________
  *
- *  Copyright (c) 2014, Dj_Dexter, Helmuth.Schmelzer@gmail.com 
+ *  Copyright (c) 2014, Dj_Dexter, Helmuth.Schmelzer@gmail.com
  *  Copyright (c) 2010, Rinaldini Julien, julien.rinaldini@heig-vd.ch
  *  Based in moetunes fork
  *  This program is free software: you can redistribute it and/or modify
@@ -99,7 +99,7 @@ static struct key keys[] = {
 // Windows Key + shift + shortcut
     {  MOD4|ShiftMask,   XK_j,                       move_up,        {NULL}},
     {  MOD4|ShiftMask,   XK_k,                       move_down,      {NULL}},
-    {  MOD4|ShiftMask,   XK_Return,                  swap_master,    {NULL}},
+    {  MOD4|ShiftMask,   XK_n,                       swap_master,    {NULL}},
     {  MOD4|ShiftMask,   XK_m,                       toggle_fullscreen,{NULL}},
     {  MOD4|ShiftMask,   XK_v,                       switch_vertical,{NULL}},
     {  MOD4|ShiftMask,   XK_h,                       switch_horizontal,{NULL}},
