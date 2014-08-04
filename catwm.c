@@ -125,6 +125,7 @@ static void logger(const char* e); //logger
 static void cleanup(void); //exported from monsterwm.c
 static void deletewindow(Window w); //exported from monsterwm.c
 static Bool running = True;
+static void wea(); //stupid quick and dirty anti not focus
 
 // Include configuration file (need struct key)
 #include "config.h"
@@ -688,6 +689,12 @@ void start() {
     while(running && !XNextEvent(dis, &ev)) if (events[ev.type]) events[ev.type](&ev);
 }
 
+void wea() {
+    //quick and dirty anti not focus
+    decrease();
+    increase();
+}
+
 //for logging events...
 void logger(const char* e) {
     fprintf(stderr,"\n\033[0;34m:: catwm-0.0.4 : %s \033[0;m\n", e);
@@ -763,6 +770,8 @@ int main(int argc, char **argv) {
     // Start wm
     start();
     cleanup();
+    //quick and dirty anti not focus
+    wea();
     // Close display
 //    XCloseDisplay(dis);
 
