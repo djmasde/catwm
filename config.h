@@ -53,8 +53,9 @@
 // Colors
 #define FOCUS           "#664422" // dkorange
 #define UNFOCUS         "#004050" // blueish
-//#define UNFOCUS         "#7588A3" // skyblueist
 //#define FOCUS           "#956671" // pinkish
+//#define UNFOCUS         "#7588A3" // skyblueist
+
 
 //if have gmrun...
 //const char* dmenucmd[] = {"gmrun",NULL};
