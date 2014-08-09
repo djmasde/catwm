@@ -55,8 +55,6 @@
 //#define FOCUS           "#956671" // pinkish
 #define UNFOCUS         "#004050" // blueish
 
-
-
 //if have gmrun...
 //const char* dmenucmd[] = {"gmrun",NULL};
 const char* dmenucmd[] = {"dmenu_run","-b",NULL};
