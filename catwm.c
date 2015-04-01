@@ -209,7 +209,7 @@ void unmapnotify(XEvent *e) { // for thunderbird's write window and maybe others
                //Quick and dirty hack, for molest resize, if have more dialogs...
                decrease();
                //without this, windows like GnuStep style or others, catwm retakes the window
-               //and dissapear the bug "ghost" window.
+               //and disappear the bug "ghost" window.
                update_current();
                return;
             }
