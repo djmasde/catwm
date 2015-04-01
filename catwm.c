@@ -7,7 +7,7 @@
  *  (          ))))))________________ Cute And Tiny Window Manager
  *  ______________________________________________________________________________
  *
- *  Copyright (c) 2014, Dj_Dexter, Helmuth.Schmelzer@gmail.com
+ *  Copyright (c) 2014-2015, Dj_Dexter, Helmuth.Schmelzer@gmail.com
  *  Copyright (c) 2010, Rinaldini Julien, julien.rinaldini@heig-vd.ch
  *  Based in moetunes fork
  *  This program is free software: you can redistribute it and/or modify
@@ -208,6 +208,9 @@ void unmapnotify(XEvent *e) { // for thunderbird's write window and maybe others
                increase();
                //Quick and dirty hack, for molest resize, if have more dialogs...
                decrease();
+               //without this, windows like GnuStep style or others, catwm retakes the window
+               //and dissapear the bug "ghost" window.
+               update_current();
                return;
             }
     }
@@ -755,7 +758,7 @@ void cleanup(void) {
 int main(int argc, char **argv) {
     //exported from dwm.c
     if(argc == 2 && !strcmp("-v", argv[1]))
-	die("© 2010 pyknite, © 2014 Dj_Dexter, see LICENSE for details\n");
+	die("© 2010 pyknite, © 2014-2015 Dj_Dexter, see LICENSE for details\n");
     else if(argc != 1)
 	die("usage: catwm [-v]\n");
     // Open display   
@@ -769,7 +772,7 @@ int main(int argc, char **argv) {
     setup();
     // Start wm
     start();
-    cleanup();
+//    cleanup();
     //quick and dirty anti not focus
     wea();
     // Close display
