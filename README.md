@@ -16,6 +16,14 @@ I will try to stay under 1000 SLOC.
 
 Status
 ------
+* 01.04.15
+
+   -Fixed stupid bug "ghost window".
+
+   -Commented cleanup() void.
+
+   -Updated trivial changes.
+
  * 26.07.14 -> v0.4
 
    -Minor changes in catwm.c
