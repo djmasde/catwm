@@ -7,7 +7,7 @@
  *  (          ))))))________________ Cute And Tiny Window Manager
  *  ______________________________________________________________________________
  *
- *  Copyright (c) 2014, Dj_Dexter, Helmuth.Schmelzer@gmail.com
+ *  Copyright (c) 2014-2015, Dj_Dexter, Helmuth.Schmelzer@gmail.com
  *  Copyright (c) 2010, Rinaldini Julien, julien.rinaldini@heig-vd.ch
  *  Based in moetunes fork
  *  This program is free software: you can redistribute it and/or modify
@@ -65,9 +65,9 @@ const char* prev[]     = {"ncmpcpp","prev",NULL};
 const char* toggle[]   = {"ncmpcpp","toggle",NULL };
 const char* voldown[]  = {"amixer","set","PCM","5\%-",NULL};
 const char* volup[]    = {"amixer","set","PCM","5\%+",NULL};
-const char* firecmd[]  = {"qupzilla",NULL};
+const char* firecmd[]  = {"firefox",NULL};
 const char* leafpad[]  = {"leafpad",NULL};
-const char* paharo[]   = {"psi",NULL};
+const char* paharo[]   = {"pidgin",NULL};
 
 // for reboot and shutdown
 const char* rebootcmd[]     = {"sudo","reboot",NULL};
