@@ -24,7 +24,7 @@ Status
 
    -Updated trivial changes.
 
- * 26.07.14 -> v0.4
+* 26.07.14 -> v0.4
 
    -Minor changes in catwm.c
 
