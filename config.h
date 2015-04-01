@@ -51,8 +51,8 @@
 #define DEFAULT_MODE    2 /* 0 = Horizontal, 1 = Fullscreen, 2 = Vertical */
 
 // Colors
-#define FOCUS           "#664422" // dkorange
-//#define FOCUS           "#956671" // pinkish
+//#define FOCUS           "#664422" // dkorange
+#define FOCUS           "#956671" // pinkish
 #define UNFOCUS         "#004050" // blueish
 
 //if have gmrun...
