@@ -42,17 +42,17 @@ Status
 
    -"Adopted" cleanup() function, from monsterwm.c
 
- * 25.07.14
+* 25.07.14
 
    -Minor changes in catwm.c
 
    -Added a x error handler (if other wm is running in the same display)...
 
- * 24.07.14
+* 24.07.14
 
    -Minor changes in catwm.c
   
- * 23.07.14
+* 23.07.14
 
    -Removed function client_to_desktop, more buggy o_O
 
@@ -62,7 +62,7 @@ Status
   
    -Added catkill function, to close X, in dwm's style
 
- * 22.07.14
+* 22.07.14
 
    -About: catwm -v,
 
@@ -70,7 +70,7 @@ Status
 
    -changed volume keybindings.
 
- * 21.07.14
+* 21.07.14
   
    -Numlock not affects keyboard shotcurts. 
 
