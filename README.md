@@ -48,7 +48,7 @@ Status
 
    -Added a x error handler (if other wm is running in the same display)...
 
- * 24.07.14 ->
+ * 24.07.14
 
    -Minor changes in catwm.c
   
@@ -70,7 +70,8 @@ Status
 
    -changed volume keybindings.
 
- * 21.07.14  
+ * 21.07.14
+  
    -Numlock not affects keyboard shotcurts. 
 
    -Multiple desktops works now ok,
