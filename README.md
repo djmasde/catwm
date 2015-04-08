@@ -16,6 +16,9 @@ I will try to stay under 1000 SLOC.
 
 Status
 ------
+* 08.04.15
+   -Fixed possible "memory steal"
+
 * 01.04.15
 
    -Fixed stupid bug "ghost window".
