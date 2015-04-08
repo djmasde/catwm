@@ -47,7 +47,7 @@
 #include <signal.h>
 #include <sys/wait.h>
 #include <string.h>
-// exported from dminidwm.c and dwm.c
+// imported from dminidwm.c and dwm.c
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 #define TABLENGTH(X)    (sizeof(X)/sizeof(*X))
 // for ignoring the numlock mask
@@ -122,8 +122,8 @@ static void tile();
 static void update_current();
 static int xerror(Display *dis, XErrorEvent *ee), (*xerrorxlib)(Display *, XErrorEvent *); //for error handler
 static void logger(const char* e); //logger
-static void cleanup(void); //exported from monsterwm.c
-static void deletewindow(Window w); //exported from monsterwm.c
+static void cleanup(void); //imported from monsterwm.c
+static void deletewindow(Window w); //imported from monsterwm.c
 static Bool running = True;
 static void wea(); //stupid quick and dirty anti not focus
 
