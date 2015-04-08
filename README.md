@@ -123,7 +123,7 @@ Installation
 
 In debian and derivatives: 
 
-    # apt-get install build-essential libx11-dev
+    # apt-get install build-essential libx11-dev libxinerama-dev
 
 If use slackware, archlinux, headers is present now, in default installation...
 
@@ -136,6 +136,14 @@ Need Xlib, then:
     # make install
 
     $ make clean
+
+Needs
+-----
+ * [dmenu] (http://tools.suckless.org/dmenu/)
+
+ * [dzen] (https://github.com/robm/dzen/) "Optional"
+
+ * rxvt-unicode (urxvt)
 
 Bugs
 ----
