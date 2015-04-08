@@ -773,7 +773,7 @@ int main(int argc, char **argv) {
     setup();
     // Start wm
     start();
-//    cleanup();
+    cleanup();
     //quick and dirty anti not focus
     wea();
     // Close display
