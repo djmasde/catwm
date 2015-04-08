@@ -328,8 +328,9 @@ void remove_window(Window w) {
                 c->next->prev = c->prev;
                 current = c->prev;
             }
-
-            free(c);
+            //removed this, possible "steal the memory"
+//            free(c);
+            update_current();
             return;
         }
     }
