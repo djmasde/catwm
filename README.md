@@ -19,7 +19,10 @@ Status
 * 08.04.15
 
    -Fixed possible "memory steal"
+
    -Reactivated cleanup() void.
+
+   -Updated trivial things.
 
 * 01.04.15
 
