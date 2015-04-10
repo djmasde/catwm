@@ -16,6 +16,10 @@ I will try to stay under 1000 SLOC.
 
 Status
 ------
+* 09.04.15
+
+   -Minor changes in catwm.c
+
 * 08.04.15
 
    -Fixed possible "memory steal"
