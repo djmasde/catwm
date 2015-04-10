@@ -47,7 +47,7 @@
 #include <signal.h>
 #include <sys/wait.h>
 #include <string.h>
-// imported from dminidwm.c and dwm.c
+// imported from dminiwm.c and dwm.c
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 #define TABLENGTH(X)    (sizeof(X)/sizeof(*X))
 // for ignoring the numlock mask
@@ -308,7 +308,7 @@ void remove_window(Window w) {
 
         if(c->win == w) {
             if(c->prev == NULL && c->next == NULL) {
-                free(head);
+//                free(head);
                 head = NULL;
                 current = NULL;
                 return;
