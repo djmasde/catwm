@@ -16,6 +16,10 @@ I will try to stay under 1000 SLOC.
 
 Status
 ------
+* 13.04.15
+
+   -Prevents catwm crash, if window is excessive resized, now prevent this.
+
 * 11.04.15
 
    -Reactivated, header for multimedia keys.
