@@ -287,17 +287,17 @@ void prev_win() {
 }
 
 void decrease() {
-//    if(master_size < 50) {
+    if(master_size > 50) {
         master_size -= 10;
         tile();
-//    }
+    }
 }
 
 void increase() {
-//    if(master_size < sh-50) {
+    if(master_size < sw-50) {
         master_size += 10;
         tile();
-//    }
+    }
 }
 
 void remove_window(Window w) {
