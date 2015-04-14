@@ -16,7 +16,11 @@ I will try to stay under 1000 SLOC.
 
 Status
 ------
-* 13.04.15 -> v0.5
+* 14.04.15 -> v0.5
+
+   -Added function client_to_desktop, to move selected window to any tag.
+
+* 13.04.15
 
    -Prevents catwm crash, with nest if, in increase() void.
 
