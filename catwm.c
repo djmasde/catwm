@@ -1,4 +1,4 @@
-/* catwm-0.0.4.c
+/* catwm-0.0.5.c
  *
  *  ( o   o )  Made by cat...
  *  (  =^=  )
@@ -294,10 +294,20 @@ void decrease() {
 }
 
 void increase() {
-    if(master_size < sw-50) {
+    // if mode 2 = vertical stack prevents catwm crash with badsize X error.
+    if(mode != 2) {
+    if(master_size < sh-50) {
         master_size += 10;
         tile();
     }
+    }
+    else {
+    // if mode 1 = horizontal stack resize, but no all, prevents catwm crash with badsize X error.
+        if(master_size < sw-50) {
+        master_size += 10;
+        tile();
+    }
+    }   
 }
 
 void remove_window(Window w) {
@@ -573,7 +583,7 @@ void destroynotify(XEvent *e) {
 }
 
 void die(const char* e) {
-    fprintf(stdout,"catwm-0.0.4: %s\n",e);
+    fprintf(stdout,"catwm-0.0.5: %s\n",e);
     exit(1);
 }
  
@@ -597,7 +607,7 @@ void maprequest(XEvent *e) {
 void catkill() {
         //Close connection to X, dwm style :)
         XCloseDisplay(dis);
-        fprintf(stdout, "catwm-0.0.4: You are killed me!\n");
+        fprintf(stdout, "catwm-0.0.5: You are killed me!\n");
         die("forced shutdown");
 }
 
@@ -664,7 +674,7 @@ void setup() {
     change_desktop(arg);
     // To catch maprequest and destroynotify (if other wm running)
     XSelectInput(dis,root,SubstructureNotifyMask|SubstructureRedirectMask);
-    fprintf(stdout,"\n\n catwm-0.0.4: We're up and running!\n");
+    fprintf(stdout,"\n\n catwm-0.0.5: We're up and running!\n");
     update_current();
 }
 
@@ -701,7 +711,7 @@ void wea() {
 
 //for logging events...
 void logger(const char* e) {
-    fprintf(stderr,"\n\033[0;34m:: catwm-0.0.4 : %s \033[0;m\n", e);
+    fprintf(stderr,"\n\033[0;34m:: catwm-0.0.5 : %s \033[0;m\n", e);
 }
 
 /* There's no way to check accesses to destroyed windows, thus those cases are ignored (especially on UnmapNotify's).  Other types of errors call Xlibs default error handler, which may call exit.  */
