@@ -214,6 +214,7 @@ void client_to_desktop(const Arg arg) {
 
     tile();
     update_current();
+    change_desktop(arg);
 }
 
 void unmapnotify(XEvent *e) { // for thunderbird's write window and maybe others
