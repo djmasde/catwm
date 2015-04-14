@@ -16,9 +16,11 @@ I will try to stay under 1000 SLOC.
 
 Status
 ------
-* 13.04.15
+* 13.04.15 -> v0.5
 
-   -Prevents catwm crash, if window is excessive resized, now prevent this.
+   -Prevents catwm crash, with nest if, in increase() void.
+
+   -Trivial changes in config.def.h and config.h.
 
 * 11.04.15
 
