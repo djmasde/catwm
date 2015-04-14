@@ -126,6 +126,7 @@ static void cleanup(void); //imported from monsterwm.c
 static void deletewindow(Window w); //imported from monsterwm.c
 static Bool running = True;
 static void wea(); //stupid quick and dirty anti not focus
+static void client_to_desktop(const Arg arg); // to move window to any desktop, especified.
 
 // Include configuration file (need struct key)
 #include "config.h"
@@ -193,6 +194,26 @@ void add_window(Window w) {
 
     current = c;
     save_desktop(current_desktop);
+}
+
+void client_to_desktop(const Arg arg) {
+    client *tmp = current;
+    int tmp2 = current_desktop;
+    
+    if(arg.i == current_desktop || current == NULL)
+        return;
+
+    // Add client to desktop
+    select_desktop(arg.i);
+    add_window(tmp->win);
+    save_desktop(arg.i);
+
+    // Remove client from current desktop
+    select_desktop(tmp2);
+    remove_window(current->win);
+
+    tile();
+    update_current();
 }
 
 void unmapnotify(XEvent *e) { // for thunderbird's write window and maybe others
