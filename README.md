@@ -20,7 +20,7 @@ Status
 
    -Prevents catwm crash, with nest if, in increase() void.
 
-   -Trivial changes in config.def.h and config.h.
+   -Trivial changes in config.def.h, config, and catwm.1.
 
 * 11.04.15
 
