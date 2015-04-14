@@ -20,6 +20,8 @@ Status
 
    -Added function client_to_desktop, to move selected window to any tag.
 
+   -Trivial changes in config.def.h, config.h, and catwm.1.
+
 * 13.04.15
 
    -Prevents catwm crash, with nest if, in increase() void.
