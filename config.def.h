@@ -1,4 +1,4 @@
- /* config.h for catwm-0.0.4.c
+ /* config.h for catwm-0.0.5.c
  *
  *  ( o   o )  Made by cat...
  *  (  =^=  )
