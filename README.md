@@ -201,4 +201,5 @@ Thanks
 
  * [the suckless team](http://suckless.org/)
  * [moetunes](https://github.com/moetunes)
+ * [c00kiemon5ter](https://github.com/c00kiemon5ter)
  * [pyknite](https://github.com/pyknite)
