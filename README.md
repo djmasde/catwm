@@ -16,6 +16,12 @@ I will try to stay under 1000 SLOC.
 
 Status
 ------
+* 17.06.15
+
+   -Added -pedantic flag in config.mk.
+
+   -Fixed warning in config.h and config.def.h, if enabled -pedantic gcc flag.
+
 * 14.04.15 -> v0.5
 
    -Added function client_to_desktop, to move selected window to any tag.
