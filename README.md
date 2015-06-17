@@ -185,15 +185,15 @@ Bugs
 
 Todo
 ----
- * Add multiple view ("desktop") >> "cutre" multihead supported, see not mine screenshot: http://a.pomf.se/ggylig.png
- 
-   And other not mine screenshot: http://a.pomf.se/mdtbvb.png
+ * Add multiple view ("desktop") >> "cutre" multihead supported
+
+   see not mine screenshot: http://i.imgur.com/VdLGm22.png
 
  * Switch to XCB
 
 If you have some particular request, just send me an e-mail, and I will see for it!
 
-Here a screenshot: http://a.pomf.se/qxwuno.png
+Here a screenshot: http://i.imgur.com/836W9nk.png
 
 License
 -------
