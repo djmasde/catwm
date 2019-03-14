@@ -1,5 +1,6 @@
 /* catwm-0.0.5.c
  *
+ *   /\___/\
  *  ( o   o )  Made by cat...
  *  (  =^=  )
  *  (        )            ... for cat!
